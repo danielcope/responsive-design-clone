@@ -1,6 +1,7 @@
 body {
   width: 100vw;
-  height: 100vh;
+  height: 200vh;
+  background: grey;
 }
 
 header {
@@ -8,7 +9,8 @@ header {
   width: 100%;
   background: rgb(39, 39, 39);
   display: flex;
-
+  position: fixed;
+  z-index: 2px;
 }
 
 header p {
@@ -21,30 +23,90 @@ header p {
   text-transform: capitalize;
 }
 
-nav {
-  color:white;
+section {
+  color:rgb(17, 2, 2);
+  
+}
 
+nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position:relative;
+  top: 60px;
+  background: grey;
 }
 
 .ham-button {
-  height: 5vh;
-  width: 90px;
-  border-radius: 5px;
-  display: flex;
-  background: rgb(236, 201, 2);
-  padding-top: 8px;
-  margin-top: 2vh;
+  background: rgb(224, 206, 42);
+  margin-top: 1.5em;
+  padding: 10px;
+  width: 80px;
   color: white;
   text-transform: uppercase;
+  border:none;
+  border-radius: 5px;
 }
 
-.hamburger {
-  padding-left: 10px;
+button span {
+  padding-left: 5px;
 }
 
-.ham {
-  background: white;
-  width: 15px;
-  height: 1px;
-  margin: 3px;
+nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  position: absolute;
+  left: 0;
+  background: rgb(44, 44, 44);
+  width: 100vw;
+  height: 200px;
+}
+
+nav p{
+  color:white;
+  text-transform: uppercase;
+  font-size:16px;
+  font-family:'Times New Roman', Times, serif;
+  padding-bottom: 10px;
+}
+
+.opened {
+  height: 40vh;
+  width:100vw;
+  background-color: rgb(39, 39, 39);
+  transition: opacity 0.4s, top 0.4s;
+  color: white;
+}
+
+.closed {
+  top:-300px;
+  opacity: 0;
+  transition: opacity 0.4s, top 0.4s;
+}
+
+ 
+@media (min-width: 700px) {
+
+  header {
+    background: transparent;
+  }
+
+  .opened, .closed {
+    opacity: 1;
+    background-color: transparent;
+    position: static;
+    bottom:45px;
+    display: flex;
+    flex-direction: row;
+    width: 70%;
+    height: 100%;
+    width: 100%;
+  }
+
+  button {
+    display: none;
+  }
 }
